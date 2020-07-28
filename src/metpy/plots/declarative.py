@@ -793,7 +793,7 @@ class Plots2D(HasTraits):
     scale = Float(default_value=1e0)
     scale.__doc__ = """Scale the field to be plotted by the value given.
 
-    This attribute will scale the field by multiplying it by ten to the scale. For example, to
+    This attribute will scale the field by multiplying by the scale. For example, to
     scale vorticity to be whole values for contouring you could set the scale to 1e5, such that
     the data values will be scaled by 10^5.
     """
