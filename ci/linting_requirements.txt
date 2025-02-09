@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ruff==0.9.4
+=======
+ruff==0.7.4
+>>>>>>> 732d46f38 (CI: (deps): Bump ruff from 0.7.3 to 0.7.4 in /ci)
 
 flake8==7.1.1
 pycodestyle==2.12.1
