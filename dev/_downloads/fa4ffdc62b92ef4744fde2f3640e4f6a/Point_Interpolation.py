@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+===================
 Point Interpolation
 ===================
 
@@ -54,16 +55,8 @@ def station_test_data(variable_names, proj_from=None, proj_to=None):
     lat = data['lat']
 
     if proj_from is not None and proj_to is not None:
-
-        try:
-
-            proj_points = proj_to.transform_points(proj_from, lon, lat)
-            return proj_points[:, 0], proj_points[:, 1], value
-
-        except Exception as e:
-
-            print(e)
-            return None
+        proj_points = proj_to.transform_points(proj_from, lon, lat)
+        return proj_points[:, 0], proj_points[:, 1], value
 
     return lon, lat, value
 
@@ -92,7 +85,7 @@ fig.colorbar(mmb, shrink=.4, pad=0, boundaries=levels)
 ###########################################
 # Natural neighbor interpolation (MetPy implementation)
 # -----------------------------------------------------
-# `Reference <https://github.com/Unidata/MetPy/files/138653/cwp-657.pdf>`_
+# `Reference <https://cwp.mines.edu/wp-content/uploads/sites/112/2018/09/cwp-657.pdf>`_
 gx, gy, img = interpolate_to_grid(x, y, temp, interp_type='natural_neighbor', hres=75000)
 img = np.ma.masked_where(np.isnan(img), img)
 fig, view = basic_map(to_proj, 'Natural Neighbor')
@@ -104,7 +97,7 @@ fig.colorbar(mmb, shrink=.4, pad=0, boundaries=levels)
 # ----------------------
 # search_radius = 100 km
 #
-# grid resolution = 25 km
+# grid resolution = 75 km
 #
 # min_neighbors = 1
 gx, gy, img = interpolate_to_grid(x, y, temp, interp_type='cressman', minimum_neighbors=1,

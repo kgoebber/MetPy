@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+===============
 Simple Sounding
 ===============
 
@@ -16,7 +17,6 @@ import metpy.calc as mpcalc
 from metpy.cbook import get_test_data
 from metpy.plots import add_metpy_logo, SkewT
 from metpy.units import units
-
 
 ###########################################
 
@@ -58,6 +58,10 @@ skew.plot(p, T, 'r')
 skew.plot(p, Td, 'g')
 skew.plot_barbs(p, u, v)
 
+# Set some better labels than the default
+skew.ax.set_xlabel('Temperature (\N{DEGREE CELSIUS})')
+skew.ax.set_ylabel('Pressure (mb)')
+
 # Add the relevant special lines
 skew.plot_dry_adiabats()
 skew.plot_moist_adiabats()
@@ -77,6 +81,10 @@ skew = SkewT()
 # log scaling in Y, as dictated by the typical meteorological plot
 skew.plot(p, T, 'r')
 skew.plot(p, Td, 'g')
+
+# Set some better labels than the default
+skew.ax.set_xlabel('Temperature (\N{DEGREE CELSIUS})')
+skew.ax.set_ylabel('Pressure (mb)')
 
 # Set spacing interval--Every 50 mb from 1000 to 100 mb
 my_interval = np.arange(100, 1000, 50) * units('mbar')

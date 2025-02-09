@@ -1,371 +1,673 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>MetPy &mdash; MetPy 0.0</title>
-  
 
-  
-  
-    <link rel="shortcut icon" href="_static/metpy_32x32.ico"/>
-  
-  
-  
-    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/index.html"/>
-  
 
-  
+<html lang="en" data-content_root="./" data-theme="auto">
 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MetPy &#8212; MetPy 0.0dev</title>
   
   
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/theme-unidata.css?v=452fc297" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d885e3d9"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-J48T2BG3J7"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-J48T2BG3J7');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-J48T2BG3J7');
+            </script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unidata.github.io/MetPy/pst-versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="_static/doc_shared.js?v=fe4a670c"></script>
+    <link rel="icon" href="_static/metpy_32x32.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Guide" href="userguide/index.html" />
     
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0dev" />
+    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:10:12"/>
+    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/index.html" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
 
   
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="MetPy 0.0" href="#"/>
-        <link rel="next" title="Installation Guide" href="installguide.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-   
-  <div class="wy-grid-for-nav">
-
+  <dialog id="pst-search-dialog">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-          
-            <a href="#" class="icon icon-home"> MetPy
-          
-
-          
-            
-            <img src="_static/metpy_150x150.png" class="logo" />
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                
-                  <div class="version-dropdown">
-                    <select class="version-list" id="version-list">
-                      <option value=''>0.0</option>
-                      
-                        
-                          <option value="../latest">latest</option>
-                        
-                      
-                        
-                          <option value="../dev">dev</option>
-                        
-                      
-                    </select>
-                  </div>
-                
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-          
-        </div>
+  
+    
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="installguide.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startingguide.html">Getting Started with MetPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="units.html">Unit Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://unidata.github.io/python-training/gallery/gallery-home">Python Gallery (separate site)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">Reference Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">MetPy Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gempak.html">GEMPAK Conversion Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SUPPORT.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributors Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructureguide.html">Infrastructure Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing MetPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-</ul>
+  
+    
+  
 
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">MetPy</a>
-        
-      </nav>
-
-
+    
+    
+    <img src="_static/metpy_horizontal.png" class="logo__image only-light" alt="MetPy 0.0dev - Home"/>
+    <img src="_static/metpy_horizontal.png" class="logo__image only-dark pst-js-only" alt="MetPy 0.0dev - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
     
-      <li><a href="#">Docs</a> &raquo;</li>
-        
-      <li>MetPy</li>
-    
-    
-    <li class="source-link">
-        
-            
-                <a href="https://github.com/Unidata/MetPy/edit/master/docs/index.rst"
-                   class="fa fa-github"> Improve this page</a>
-            
-        
-    </li>
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="userguide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    Reference Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="devel/index.html">
+    Developer’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="userguide/SUPPORT.html">
+    Support
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/Unidata/MetPy/releases">
+    Release Notes
+  </a>
+</li>
 
   </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Unidata/MetPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/metpy.bsky.social" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MetPy" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://calendar.google.com/calendar/embed?src=c_596cc34cd7196caec223786795c8730786aead6e2dbffe03403186f203075973%40group.calendar.google.com&ctz=America%2FDenver" title="Calendar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-calendar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Calendar</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
   
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <a class="reference internal image-reference" href="_images/sounding.png"><img alt="_images/sounding.png" class="align-left" src="_images/sounding.png" style="width: 150px;" /></a>
-<a class="reference internal image-reference" href="_images/radar.png"><img alt="_images/radar.png" class="align-left" src="_images/radar.png" style="width: 150px;" /></a>
-<a class="reference internal image-reference" href="_images/NSF.jpg"><img alt="_images/NSF.jpg" class="align-right" src="_images/NSF.jpg" style="width: 100px;" /></a>
-<div class="toctree-wrapper compound">
-</div>
-<div class="section" id="metpy">
-<h1>MetPy<a class="headerlink" href="#metpy" title="Permalink to this headline">¶</a></h1>
-<p>MetPy is a collection of tools in Python for reading, visualizing, and
-performing calculations with weather data. If you’re new to MetPy, check
-out our <a class="reference internal" href="startingguide.html"><span class="doc">Getting Started</span></a> guide. Development is
-supported by the National Science Foundation through grants AGS-1344155,
-OAC-1740315, AGS-1901712.</p>
-<p>For additional MetPy examples not included in this repository, please see the <a class="reference external" href="https://unidata.github.io/python-training/gallery/gallery-home">Unidata Python
-Gallery</a>.</p>
-<p>We support Python &gt;= 3.6. Support for Python 2.7 was dropped with the release of 0.12.</p>
-<div class="section" id="contact-us">
-<h2>Contact Us<a class="headerlink" href="#contact-us" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>For questions about MetPy, please ask them using the “metpy” tag on <a class="reference external" href="https://stackoverflow.com/questions/tagged/metpy">StackOverflow</a>. Our
-developers are actively monitoring for questions there.</p></li>
-<li><p>You can also email <a class="reference external" href="mailto:support-python&#37;&#52;&#48;unidata&#46;ucar&#46;edu">Unidata’s
-python support email address</a></p></li>
-<li><p>The source code is available on <a class="reference external" href="https://github.com/Unidata/MetPy">GitHub</a></p></li>
-<li><p>Bug reports and feature requests should be directed to the
-<a class="reference external" href="https://github.com/Unidata/MetPy/issues">GitHub issue tracker</a></p></li>
-<li><p>MetPy has a <a class="reference external" href="https://gitter.im/Unidata/MetPy">Gitter</a> chatroom for more “live” communication</p></li>
-<li><p>MetPy can also be found on <a class="reference external" href="https://twitter.com/MetPy">Twitter</a></p></li>
-<li><p>If you use MetPy in a publication, please see <a class="reference internal" href="citing.html#citing-metpy"><span class="std std-ref">Citing MetPy</span></a>.</p></li>
-<li><p>For release announcements, join Unidata’s <a class="reference external" href="https://www.unidata.ucar.edu/support/#mailinglists">python-users</a> mailing list</p></li>
-</ul>
-</div>
-<div class="section" id="versions">
-<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
-<p>MetPy follows <a class="reference external" href="https://semver.org">semantic versioning</a> in its version number. This means
-that any MetPy <code class="docutils literal notranslate"><span class="pre">1.x</span></code> release will be backwards compatible with an earlier <code class="docutils literal notranslate"><span class="pre">1.y</span></code> release. By
-“backward compatible”, we mean that <strong>correct</strong> code that works on a <code class="docutils literal notranslate"><span class="pre">1.y</span></code> version will work
-on a future <code class="docutils literal notranslate"><span class="pre">1.x</span></code> version. It’s always possible for bug fixes to change behavior or make
-incorrect code cease to work. Backwards-incompatible changes will only be allowed when changing
-to version <code class="docutils literal notranslate"><span class="pre">2.0</span></code>. Such changes will be proceeded by <em class="xref py py-obj">MetpyDeprecationWarning</em> or
-<em class="xref py py-obj">FutureWarning</em> as appropriate. For a version <code class="docutils literal notranslate"><span class="pre">1.x.y</span></code>, we change <code class="docutils literal notranslate"><span class="pre">x</span></code> when we
-release new features, and <code class="docutils literal notranslate"><span class="pre">y</span></code> when we make a release with only bug fixes.</p>
-</div>
-<div class="section" id="media">
-<h2>Media<a class="headerlink" href="#media" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/369011">AMS 2020 talk</a> on MetPy being ready for a 1.0 release</p></li>
-<li><p><a class="reference external" href="https://ams.confex.com/ams/2019Annual/meetingapp.cgi/Paper/352384">AMS 2019 talk</a> on bringing GEMPAK-like syntax to MetPy’s declaritive plotting interface</p></li>
-<li><p><a class="reference external" href="https://ams.confex.com/ams/2019Annual/meetingapp.cgi/Paper/354058">AMS 2019 poster</a> on recent development and community building with MetPy</p></li>
-<li><p><a class="reference external" href="http://johnrleeman.com/pubs/2018/Leeman_2018_SciPy_Poster.pdf">SciPy 2018 poster</a> and <a class="reference external" href="http://johnrleeman.com/pubs/2018/Leeman_2018_SciPy_Abstract.pdf">abstract</a> on building community by John Leeman</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OKQlUdPY0Jc">SciPy 2018 talk</a> on prototyping MetPy’s future declarative plotting interface</p></li>
-<li><p>Presentation on MetPy and Community Development at the <a class="reference external" href="https://ams.confex.com/ams/98Annual/webprogram/Paper333578.html">2018 AMS Annual Meeting</a> by Ryan May</p></li>
-<li><p><a class="reference external" href="https://github.com/jrleeman/CAPE-SciPy-2017/blob/master/Poster/SciPy_Poster_2017.pdf">SciPy 2017 poster</a> and <a class="reference external" href="https://github.com/jrleeman/CAPE-SciPy-2017">repository</a>
-about reproducing a classic CAPE paper with MetPy.</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=qCo9bkT9sow">SciPy 2017 talk</a> and <a class="reference external" href="https://nbviewer.jupyter.org/format/slides/github/dopplershift/Talks/blob/master/SciPy2017/MetPy%20Units.ipynb">slides</a>
-about challenges developing MetPy with units</p></li>
-<li><p>MetPy was featured on <a class="reference external" href="https://www.podcastinit.com/episode-100-metpy-with-ryan-may-sean-arms-and-john-leeman/">Episode 100 of Podcast.__init__</a></p></li>
-<li><p>Presentation on MetPy’s build infrastructure by Ryan May at <a class="reference external" href="https://www.youtube.com/watch?v=moLKGjbXvgE">SciPy 2016</a></p></li>
-<li><p>MetPy was included in tools presented at the <a class="reference external" href="https://www.youtube.com/watch?v=RRvJI_vouQc">SSEC/Wisconsin AOS Python Workshop</a></p></li>
-<li><p>Presentation on MetPy at the <a class="reference external" href="https://ams.confex.com/ams/96Annual/webprogram/Paper286983.html">2016 AMS Annual Meeting</a> by Ryan May</p></li>
-<li><p>Ryan May’s talk and tutorial on MetPy at the <a class="reference external" href="https://www.youtube.com/watch?v=umwauHAL-0M">2015 Unidata Users Workshop</a></p></li>
-</ul>
-</div>
-<div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p>MetPy is available under the terms of the open source <a class="reference external" href="https://raw.githubusercontent.com/Unidata/MetPy/master/LICENSE">BSD 3 Clause license</a>.</p>
-</div>
-<div class="section" id="code-of-conduct">
-<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline">¶</a></h2>
-<p>We want everyone to feel welcome to contribute to MetPy and participate in discussions. In that
-spirit please have a look at our <a class="reference external" href="https://github.com/Unidata/MetPy/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
-</div>
-<div class="section" id="related-projects">
-<h2>Related Projects<a class="headerlink" href="#related-projects" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://unidata.github.io/netcdf4-python/">netCDF4-python</a> is the officially blessed Python API for <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a></p></li>
-<li><p><a class="reference external" href="https://unidata.github.io/siphon/">siphon</a> is a Python API for accessing remote data on <a class="reference external" href="https://www.unidata.ucar.edu/software/tds/current/">THREDDS Data Servers</a></p></li>
-<li><p>The <a class="reference external" href="https://unidata.github.io/python-training/gallery/gallery-home">Unidata Python Gallery</a> is a collection of meteorological Python scripts</p></li>
-</ul>
-</div>
-</div>
-
-
-           </div>
-           <div class="articleComments">
-            
-           </div>
-          </div>
-          <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="installguide.html" class="btn btn-neutral float-right" title="Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
     </div>
   
 
-  <hr/>
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
 
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2008-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Nov 25, 2020 at 22:30:03.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-     
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-92978945-1', 'auto');
-  ga('send', 'pageview');
-</script>
-<script>var version_json_loc = "../versions.json";</script>
+    </header>
+  
+    
+    <div class="container-fluid" id="banner"></div>
 
 
-</footer>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
 
-        </div>
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="userguide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    Reference Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="devel/index.html">
+    Developer’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="userguide/SUPPORT.html">
+    Support
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/Unidata/MetPy/releases">
+    Release Notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
       </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Unidata/MetPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/metpy.bsky.social" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MetPy" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://calendar.google.com/calendar/embed?src=c_596cc34cd7196caec223786795c8730786aead6e2dbffe03403186f203075973%40group.calendar.google.com&ctz=America%2FDenver" title="Calendar" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-calendar fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Calendar</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
 
-    </section>
-
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
   </div>
   
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
 
-  
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="toctree-wrapper compound">
+</div>
+<section id="metpy">
+<h1>MetPy<a class="headerlink" href="#metpy" title="Link to this heading">#</a></h1>
+<p>MetPy is a collection of tools in Python for reading, visualizing, and performing calculations
+with weather data. MetPy supports Python &gt;= 3.10 and is freely available under a permissive
+<a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/LICENSE">open source license</a>.</p>
+<p>If you’re new to MetPy, check out our <a class="reference internal" href="userguide/startingguide.html"><span class="doc">Getting Started</span></a> guide.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="10.0em" height="10.0em" class="sd-octicon sd-octicon-book" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.495 4.495 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.752.752 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a2.996 2.996 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75Zm12.75 15.232a4.503 4.503 0 0 1 2.823-.971l6.927.047V4.5h-6.75a3 3 0 0 0-3 3ZM11.247 7.497a3 3 0 0 0-3-2.997H1.5V18h6.947c1.018 0 2.006.346 2.803.98Z"></path></svg></div>
+<p class="sd-card-text"><strong>User Guide</strong></p>
+<p class="sd-card-text">The user guide provides in-depth information on how
+to use MetPy, including how to get started. This is where to look for
+general conceptual descriptions on how to use parts of MetPy, like its
+support for XArray or units.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="userguide/index.html"><span class="doc">User Guide</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="10.0em" height="10.0em" class="sd-octicon sd-octicon-list-unordered" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.75 5.5h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5Zm0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5Zm0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5ZM5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></div>
+<p class="sd-card-text"><strong>Reference Guide</strong></p>
+<p class="sd-card-text">The reference guide contains detailed descriptions on
+every function and class within MetPy. This is where to turn to understand
+how to use a particular feature or where to search for a specific tool</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="api/index.html"><span class="doc">Reference Guide</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="10.0em" height="10.0em" class="sd-octicon sd-octicon-terminal" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"></path><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"></path></svg></div>
+<p class="sd-card-text"><strong>Developer Guide</strong></p>
+<p class="sd-card-text">Want to help make MetPy better? Found something
+that’s not working quite right? You can find instructions on how to
+contribute to MetPy here. You can also find detailed descriptions on
+tools useful for developing MetPy.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="devel/index.html"><span class="doc">Developer’s Guide</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="10.0em" height="10.0em" class="sd-octicon sd-octicon-graph" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 2.75a.75.75 0 0 0-1.5 0v18.5c0 .414.336.75.75.75H20a.75.75 0 0 0 0-1.5H2.5V2.75Z"></path><path d="M22.28 7.78a.75.75 0 0 0-1.06-1.06l-5.72 5.72-3.72-3.72a.75.75 0 0 0-1.06 0l-6 6a.75.75 0 1 0 1.06 1.06l5.47-5.47 3.72 3.72a.75.75 0 0 0 1.06 0l6.25-6.25Z"></path></svg></div>
+<p class="sd-card-text"><strong>Example Gallery</strong></p>
+<p class="sd-card-text">Check out MetPy’s gallery of examples which contains
+sample code demonstrating various parts of MetPy’s functionality.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="examples/index.html"><span class="doc">Example Gallery</span></a></div>
+</div>
+</div>
+</div>
+<section id="calendar">
+<h2>Calendar<a class="headerlink" href="#calendar" title="Link to this heading">#</a></h2>
+<p>Check out the MetPy Community Calendar below. The bi-weekly MetPy Community Dev Call
+is an open discussion for community input, developer highlights and updates, and
+community code showcase opportunities. Stop by!
+Find more information in the pinned thread in the
+<em class="xref py py-obj">Announcements section</em>
+of MetPy GitHub Discussions.</p>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FDenver&title=MetPy%20Community%20Calendar&showPrint=0&showTabs=0&showCalendars=0&showTz=1&src=Y181OTZjYzM0Y2Q3MTk2Y2FlYzIyMzc4Njc5NWM4NzMwNzg2YWVhZDZlMmRiZmZlMDM0MDMxODZmMjAzMDc1OTczQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23D50000" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><p>Our up-to-date references for grants and funding can be found
+<a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/CITATION.cff">here</a>.</p>
+<img alt="NSF Unidata logo" class="no-scaled-link only-light align-center" src="_images/NSF-Unidata_lockup_horizontal_2024.png" style="height: 100px;" />
+<img alt="NSF Unidata logo" class="no-scaled-link only-dark align-center" src="_images/NSF-Unidata_lockup_horizontal_2024_darkmode_v3.png" style="height: 100px;" />
+</section>
+</section>
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.0.post616+ge63b136',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script type="text/javascript" src="None"></script>
 
-  
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="userguide/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
 
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar">Calendar</a></li>
+</ul>
+  </nav></div>
 
-</body>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2008–2025, MetPy Developers. Development is supported by Unidata and the National Science Foundation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

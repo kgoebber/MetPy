@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+=============================
 Natural Neighbor Verification
 =============================
 
@@ -22,7 +23,7 @@ approach taken in MetPy is correct.
 #    complexity for spatial searches.
 #
 # 2. We generate a `Delaunay Triangulation <https://docs.scipy.org/doc/scipy/
-#    reference/tutorial/spatial.html#delaunay-triangulations>`_
+#    tutorial/spatial.html#delaunay-triangulations>`_
 #    using the locations of the provided observations.
 #
 # 3. For each triangle, we calculate its circumcenter and circumradius. Using
@@ -46,7 +47,7 @@ approach taken in MetPy is correct.
 # 6. Increment the current edges to be checked, i.e.:
 #    n - 1 = n, n = n + 1, n + 1 = n + 2
 #
-# 7. Repeat steps 5 & 6 until all of the edge combinations of 3 have been visited.
+# 7. Repeat steps 5 & 6 until all the edge combinations of 3 have been visited.
 #
 # 8. Repeat steps 4 through 7 for each grid cell.
 import matplotlib.pyplot as plt
@@ -66,9 +67,11 @@ from metpy.interpolate.points import natural_neighbor_point
 # estimate a value using natural neighbor interpolation.
 #
 # The locations of these observations are then used to generate a Delaunay triangulation.
-np.random.seed(100)
 
-pts = np.random.randint(0, 100, (10, 2))
+# Some randomly selected points
+pts = np.array([[8, 24], [67, 87], [79, 48], [10, 94], [52, 98],
+                [53, 66], [98, 14], [34, 24], [15, 60], [58, 16]])
+
 xp = pts[:, 0]
 yp = pts[:, 1]
 zp = (pts[:, 0] * pts[:, 0]) / 1000
@@ -90,7 +93,8 @@ ax.set_aspect('equal', 'datalim')
 ax.set_title('Triangulation of observations and test grid cell '
              'natural neighbor interpolation values')
 
-members, circumcenters = geometry.find_natural_neighbors(tri, list(zip(sim_gridx, sim_gridy)))
+members, circumcenters = geometry.find_natural_neighbors(tri, list(zip(sim_gridx, sim_gridy,
+                                                                       strict=False)))
 
 val = natural_neighbor_point(xp, yp, zp, (sim_gridx[0], sim_gridy[0]), tri, members[0],
                              circumcenters)
@@ -103,7 +107,7 @@ ax.annotate(f'grid 1: {val:.3f}', xy=(sim_gridx[1] + 2, sim_gridy[1]))
 
 ###########################################
 # Using the circumcenter and circumcircle radius information from
-# :func:`metpy.interpolate.geometry.find_natural_neighbors`, we can visually
+# `metpy.interpolate.find_natural_neighbors`, we can visually
 # examine the results to see if they are correct.
 def draw_circle(ax, x, y, r, m, label):
     th = np.linspace(0, 2 * np.pi, 100)
@@ -148,7 +152,7 @@ print('Triangle 8 circumradius:', r)
 ###########################################
 # Lets do a manual check of the above interpolation value for grid 0 (southernmost grid)
 # Grab the circumcenters and radii for natural neighbors
-cc = np.array(circumcenters)
+cc = np.array([circumcenters[m] for m in members[0]])
 r = np.array([geometry.circumcircle_radius(*tri.points[tri.simplices[m]]) for m in members[0]])
 
 print('circumcenters:\n', cc)
@@ -156,23 +160,23 @@ print('radii\n', r)
 
 ###########################################
 # Draw the natural neighbor triangles and their circumcenters. Also plot a `Voronoi diagram
-# <https://docs.scipy.org/doc/scipy/reference/tutorial/spatial.html#voronoi-diagrams>`_
+# <https://docs.scipy.org/doc/scipy/tutorial/spatial.html#voronoi-diagrams>`_
 # which serves as a complementary (but not necessary)
 # spatial data structure that we use here simply to show areal ratios.
 # Notice that the two natural neighbor triangle circumcenters are also vertices
 # in the Voronoi plot (green dots), and the observations are in the polygons (blue dots).
-vor = Voronoi(list(zip(xp, yp)))
+vort = Voronoi(list(zip(xp, yp, strict=False)))
 
 fig, ax = plt.subplots(1, 1, figsize=(15, 10))
 ax.ishold = lambda: True  # Work-around for Matplotlib 3.0.0 incompatibility
-voronoi_plot_2d(vor, ax=ax)
+voronoi_plot_2d(vort, ax=ax)
 
 nn_ind = np.array([0, 5, 7, 8])
 z_0 = zp[nn_ind]
 x_0 = xp[nn_ind]
 y_0 = yp[nn_ind]
 
-for x, y, z in zip(x_0, y_0, z_0):
+for x, y, z in zip(x_0, y_0, z_0, strict=False):
     ax.annotate(f'{x}, {y}: {z:.3f} F', xy=(x, y))
 
 ax.plot(sim_gridx[0], sim_gridy[0], 'k+', markersize=10)

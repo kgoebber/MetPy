@@ -19,7 +19,6 @@ from metpy.cbook import get_test_data
 import metpy.plots as mpplots
 from metpy.units import units
 
-
 ########################################
 # **Getting the data**
 #
@@ -28,6 +27,13 @@ from metpy.units import units
 # The data are pre-processed to attach latitude/longitude locations for each RAOB site.
 
 data = pd.read_csv(get_test_data('UPA_obs.csv', as_file_obj=False))
+
+# In a real-world case, you could obtain and preprocess the data with code such as
+# from siphon.simplewebservice.iastate import IAStateUpperAir
+# from metpy.io import add_station_lat_lon
+
+# data = IAStateUpperAir().request_all_data(datetime(2021, 8, 25, 12))
+# data = add_station_lat_lon(data)
 
 ########################################
 # **Plotting the data**

@@ -14,6 +14,7 @@ FilledContourPlot
    
       ~FilledContourPlot.clabels
       ~FilledContourPlot.colorbar
+      ~FilledContourPlot.colorbar_fontsize
       ~FilledContourPlot.colormap
       ~FilledContourPlot.contours
       ~FilledContourPlot.cross_validation_lock
@@ -21,13 +22,21 @@ FilledContourPlot
       ~FilledContourPlot.field
       ~FilledContourPlot.griddata
       ~FilledContourPlot.image_range
+      ~FilledContourPlot.label_fontsize
+      ~FilledContourPlot.latitude
       ~FilledContourPlot.level
+      ~FilledContourPlot.longitude
+      ~FilledContourPlot.mpl_args
       ~FilledContourPlot.name
       ~FilledContourPlot.parent
       ~FilledContourPlot.plot_units
       ~FilledContourPlot.plotdata
       ~FilledContourPlot.scale
+      ~FilledContourPlot.smooth_contour
+      ~FilledContourPlot.smooth_field
       ~FilledContourPlot.time
+      ~FilledContourPlot.x
+      ~FilledContourPlot.y
 
    
    
@@ -48,6 +57,7 @@ FilledContourPlot
       ~FilledContourPlot.clear
       ~FilledContourPlot.clear_collections
       ~FilledContourPlot.clear_handle
+      ~FilledContourPlot.copy
       ~FilledContourPlot.draw
       ~FilledContourPlot.has_trait
       ~FilledContourPlot.hold_trait_notifications
@@ -77,6 +87,7 @@ FilledContourPlot
    
    .. autoattribute:: clabels
    .. autoattribute:: colorbar
+   .. autoattribute:: colorbar_fontsize
    .. autoattribute:: colormap
    .. autoattribute:: contours
    .. autoattribute:: cross_validation_lock
@@ -84,13 +95,21 @@ FilledContourPlot
    .. autoattribute:: field
    .. autoattribute:: griddata
    .. autoattribute:: image_range
+   .. autoattribute:: label_fontsize
+   .. autoattribute:: latitude
    .. autoattribute:: level
+   .. autoattribute:: longitude
+   .. autoattribute:: mpl_args
    .. autoattribute:: name
    .. autoattribute:: parent
    .. autoattribute:: plot_units
    .. autoattribute:: plotdata
    .. autoattribute:: scale
+   .. autoattribute:: smooth_contour
+   .. autoattribute:: smooth_field
    .. autoattribute:: time
+   .. autoattribute:: x
+   .. autoattribute:: y
 
    
    
@@ -110,6 +129,7 @@ FilledContourPlot
    .. automethod:: clear
    .. automethod:: clear_collections
    .. automethod:: clear_handle
+   .. automethod:: copy
    .. automethod:: draw
    .. automethod:: has_trait
    .. automethod:: hold_trait_notifications

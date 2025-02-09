@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+=================================
 MetPy Declarative Syntax Tutorial
 =================================
 
@@ -63,7 +64,7 @@ ds = data.metpy.sel(lat=slice(70, 10), lon=slice(360 - 150, 360 - 55))
 
 #########################################################################
 # For full details on xarray indexing/selection, see
-# `xarray's documentation <http://xarray.pydata.org/en/stable/indexing.html>`_.
+# `xarray's documentation <https://docs.xarray.dev/en/stable/indexing.html>`_.
 
 #########################################################################
 # Calculations
@@ -81,7 +82,7 @@ ds['wind_speed'] = mpcalc.wind_speed(ds['u-component_of_wind_isobaric'],
 # Plotting
 # --------
 #
-# With that miniaml preparation, we are now ready to use the simplified plotting syntax to be
+# With that minimal preparation, we are now ready to use the simplified plotting syntax to be
 # able to plot our data and analyze the meteorological situation.
 #
 # General Structure
@@ -102,10 +103,10 @@ ds['wind_speed'] = mpcalc.wind_speed(ds['u-component_of_wind_isobaric'],
 #
 # - ``ImagePlot()``
 #
-# - ``PlotBarbs()``
+# - ``BarbPlot()``
 #
-# More complete descrptions of these and other plotting types, as well as the map panel and
-# panel containter classes are at the end of this tutorial.
+# More complete descriptions of these and other plotting types, as well as the map panel and
+# panel container classes are at the end of this tutorial.
 #
 # Let's plot a 300-hPa map with color-filled wind speed, which we calculated and added to
 # our Dataset above, and geopotential heights over the CONUS.
@@ -160,7 +161,7 @@ panel.title = f'{cfill.level.m}-hPa Heights and Wind Speed at {plot_time}'
 panel.plots = [cfill, cntr2]
 
 #########################################################################
-# Finally we'll collect all of the panels to plot on the figure, set the size of the figure,
+# Finally we'll collect all the panels to plot on the figure, set the size of the figure,
 # and ultimately show or save the figure.
 
 # Set the attributes for the panel and put the panel in the figure
@@ -183,11 +184,11 @@ pc.show()
 # -----------------
 #
 # We can easily add wind barbs to the plot we generated above by adding another plot type
-# and adding it to the panel. The plot type for wind barbs is ``PlotBarbs()`` and has its own
+# and adding it to the panel. The plot type for wind barbs is ``BarbPlot()`` and has its own
 # set of attributes to control plotting a vector quantity.
 
 #########################################################################
-# We start with setting the attributes that we had before for our 300 hPa plot inlcuding,
+# We start with setting the attributes that we had before for our 300 hPa plot including,
 # Geopotential Height contours, and color-filled wind speed.
 
 # Set attributes for contours of Geopotential Heights at 300 hPa
@@ -214,8 +215,8 @@ cfill.plot_units = 'knot'
 
 #########################################################################
 # Now we'll set the attributes for plotting wind barbs, with the required attributes of data,
-# time, field, and level. The skip attribute is particularly useful for thining the number of
-# wind barbs that are plotted on the map and again we'll convert to units of knots.
+# time, field, and level. The skip attribute is particularly useful for thinning the number of
+# wind barbs that are plotted on the map. Again we convert to units of knots.
 
 # Set attributes for plotting wind barbs
 barbs = BarbPlot()
@@ -265,14 +266,14 @@ print(df.keys())
 obs_time = datetime(2019, 7, 1, 12)
 
 #########################################################################
-# Setting of our attributes for plotting observations is pretty straignforward and just needs
+# Setting of our attributes for plotting observations is pretty straightforward and just needs
 # to be lists for the variables, and a comparable number of items for plot characteristics that
 # are specific to the individual fields. For example, the locations around a station plot, the
-# plot units, and any plotting formats would all meed to have the same number of items as the
+# plot units, and any plotting formats would all need to have the same number of items as the
 # fields attribute.
 #
-# Plotting wind bards is done through the vector_field attribute and you can reduce the number
-# of points plotted (especially important for surface observations) with the reduce points
+# Plotting wind bards is done through the vector_field attribute. You can reduce the number
+# of points plotted (especially important for surface observations) with the ``reduce_points``
 # attribute.
 #
 # For a very basic plot of one field, the minimum required attributes are the data, time,
@@ -285,7 +286,7 @@ obs.time = obs_time
 obs.time_window = timedelta(minutes=15)
 obs.level = None
 obs.fields = ['cloud_coverage', 'air_temperature', 'dew_point_temperature',
-              'air_pressure_at_sea_level', 'present_weather']
+              'air_pressure_at_sea_level', 'current_wx1_symbol']
 obs.plot_units = [None, 'degF', 'degF', None, None]
 obs.locations = ['C', 'NW', 'SW', 'NE', 'W']
 obs.formats = ['sky_cover', None, None, lambda v: format(v * 10, '.0f')[-3:],
@@ -294,7 +295,7 @@ obs.reduce_points = 0.75
 obs.vector_field = ['eastward_wind', 'northward_wind']
 
 #########################################################################
-# We use the same Classes for plotting our data on a map panel and collecting all of the
+# We use the same Classes for plotting our data on a map panel and collecting all the
 # panels on the figure. In this case we'll focus in on the state of Indiana for plotting.
 
 # Panel for plot with Map features
@@ -390,6 +391,13 @@ pc.show()
 # If you want to change the units for plotting purposes, add the string value of the units
 # desired. For example, if you want to plot temperature in Celsius, then set this attribute
 # to ``‘degC’``.
+#
+# ``scale``
+#
+# This attribute will scale the field by multiplying by the scale. For example, to
+# scale vorticity to be whole values for contouring you could set the scale to 1e5, such that
+# the data values will be multiplied by 10^5.
+
 
 #########################################################################
 # FilledContourPlot()
@@ -495,7 +503,7 @@ pc.show()
 # ``field``
 #
 # This attribute is a list of the vector components to be plotted. For the typical
-# meteorological case it would be the ``[‘u-compopnent’, ‘v-component’]``.
+# meteorological case it would be the ``[‘u-component’, ‘v-component’]``.
 #
 # ``time``
 #
@@ -554,7 +562,7 @@ pc.show()
 # This attribute sets the location of the fields to be plotted around the surface station
 # model. The default location is center ``(‘C’)``
 #
-# ``time_range``
+# ``time_window``
 #
 # This attribute allows you to define a window for valid observations (e.g., 15 minutes on
 # either side of the datetime object setting. This is important for surface data since actual

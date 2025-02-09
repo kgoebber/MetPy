@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+=========
 Meteogram
 =========
 
@@ -12,6 +13,7 @@ import datetime as dt
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 import numpy as np
 
 from metpy.calc import dewpoint_from_relative_humidity
@@ -44,7 +46,7 @@ class Meteogram:
             axis: number that controls the new axis to be plotted (FOR FUTURE)
         """
         if not time:
-            time = dt.datetime.utcnow()
+            time = dt.datetime.now(dt.timezone.utc)
         self.start = dates[0]
         self.fig = fig
         self.end = dates[-1]
@@ -67,19 +69,19 @@ class Meteogram:
         ln1 = self.ax1.plot(self.dates, ws, label='Wind Speed')
         self.ax1.fill_between(self.dates, ws, 0)
         self.ax1.set_xlim(self.start, self.end)
-        if not plot_range:
-            plot_range = [0, 20, 1]
+        ymin, ymax, ystep = plot_range if plot_range else (0, 20, 2)
         self.ax1.set_ylabel('Wind Speed (knots)', multialignment='center')
-        self.ax1.set_ylim(plot_range[0], plot_range[1], plot_range[2])
-        self.ax1.grid(b=True, which='major', axis='y', color='k', linestyle='--',
-                      linewidth=0.5)
+        self.ax1.set_ylim(ymin, ymax)
+        self.ax1.yaxis.set_major_locator(MultipleLocator(ystep))
+        self.ax1.grid(which='major', axis='y', color='k', linestyle='--', linewidth=0.5)
         ln2 = self.ax1.plot(self.dates, wsmax, '.r', label='3-sec Wind Speed Max')
 
         ax7 = self.ax1.twinx()
         ln3 = ax7.plot(self.dates, wd, '.k', linewidth=0.5, label='Wind Direction')
         ax7.set_ylabel('Wind\nDirection\n(degrees)', multialignment='center')
         ax7.set_ylim(0, 360)
-        ax7.set_yticks(np.arange(45, 405, 90), ['NE', 'SE', 'SW', 'NW'])
+        ax7.set_yticks(np.arange(45, 405, 90))
+        ax7.set_yticklabels(['NE', 'SE', 'SW', 'NW'])
         lines = ln1 + ln2 + ln3
         labs = [line.get_label() for line in lines]
         ax7.xaxis.set_major_formatter(mpl.dates.DateFormatter('%d/%H UTC'))
@@ -95,22 +97,22 @@ class Meteogram:
             plot_range: Data range for making figure (list of (min,max,step))
         """
         # PLOT TEMPERATURE AND DEWPOINT
-        if not plot_range:
-            plot_range = [10, 90, 2]
+        ymin, ymax, ystep = plot_range if plot_range else (10, 90, 5)
         self.ax2 = fig.add_subplot(4, 1, 2, sharex=self.ax1)
         ln4 = self.ax2.plot(self.dates, t, 'r-', label='Temperature')
         self.ax2.fill_between(self.dates, t, td, color='r')
 
         self.ax2.set_ylabel('Temperature\n(F)', multialignment='center')
-        self.ax2.grid(b=True, which='major', axis='y', color='k', linestyle='--',
-                      linewidth=0.5)
-        self.ax2.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        self.ax2.grid(which='major', axis='y', color='k', linestyle='--', linewidth=0.5)
+        self.ax2.set_ylim(ymin, ymax)
+        self.ax2.yaxis.set_major_locator(MultipleLocator(ystep))
 
         ln5 = self.ax2.plot(self.dates, td, 'g-', label='Dewpoint')
         self.ax2.fill_between(self.dates, td, self.ax2.get_ylim()[0], color='g')
 
         ax_twin = self.ax2.twinx()
-        ax_twin.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        ax_twin.set_ylim(ymin, ymax)
+        ax_twin.yaxis.set_major_locator(MultipleLocator(ystep))
         lines = ln4 + ln5
         labs = [line.get_label() for line in lines]
         ax_twin.xaxis.set_major_formatter(mpl.dates.DateFormatter('%d/%H UTC'))
@@ -126,20 +128,20 @@ class Meteogram:
             plot_range: Data range for making figure (list of (min,max,step))
         """
         # PLOT RELATIVE HUMIDITY
-        if not plot_range:
-            plot_range = [0, 100, 4]
+        ymin, ymax, ystep = plot_range if plot_range else (0, 100, 5)
         self.ax3 = fig.add_subplot(4, 1, 3, sharex=self.ax1)
         self.ax3.plot(self.dates, rh, 'g-', label='Relative Humidity')
         self.ax3.legend(loc='upper center', bbox_to_anchor=(0.5, 1.22), prop={'size': 12})
-        self.ax3.grid(b=True, which='major', axis='y', color='k', linestyle='--',
-                      linewidth=0.5)
-        self.ax3.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        self.ax3.grid(which='major', axis='y', color='k', linestyle='--', linewidth=0.5)
+        self.ax3.set_ylim(ymin, ymax)
+        self.ax3.yaxis.set_major_locator(MultipleLocator(ystep))
 
         self.ax3.fill_between(self.dates, rh, self.ax3.get_ylim()[0], color='g')
         self.ax3.set_ylabel('Relative Humidity\n(%)', multialignment='center')
         self.ax3.xaxis.set_major_formatter(mpl.dates.DateFormatter('%d/%H UTC'))
         axtwin = self.ax3.twinx()
-        axtwin.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        axtwin.set_ylim(ymin, ymax)
+        axtwin.yaxis.set_major_locator(MultipleLocator(ystep))
 
     def plot_pressure(self, p, plot_range=None):
         """
@@ -149,21 +151,21 @@ class Meteogram:
             plot_range: Data range for making figure (list of (min,max,step))
         """
         # PLOT PRESSURE
-        if not plot_range:
-            plot_range = [970, 1030, 2]
+        ymin, ymax, ystep = plot_range if plot_range else (970, 1030, 4)
         self.ax4 = fig.add_subplot(4, 1, 4, sharex=self.ax1)
         self.ax4.plot(self.dates, p, 'm', label='Mean Sea Level Pressure')
         self.ax4.set_ylabel('Mean Sea\nLevel Pressure\n(mb)', multialignment='center')
-        self.ax4.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        self.ax4.set_ylim(ymin, ymax)
+        self.ax4.yaxis.set_major_locator(MultipleLocator(ystep))
 
         axtwin = self.ax4.twinx()
-        axtwin.set_ylim(plot_range[0], plot_range[1], plot_range[2])
+        axtwin.set_ylim(ymin, ymax)
+        axtwin.yaxis.set_major_locator(MultipleLocator(ystep))
         axtwin.fill_between(self.dates, p, axtwin.get_ylim()[0], color='m')
         axtwin.xaxis.set_major_formatter(mpl.dates.DateFormatter('%d/%H UTC'))
 
         self.ax4.legend(loc='upper center', bbox_to_anchor=(0.5, 1.2), prop={'size': 12})
-        self.ax4.grid(b=True, which='major', axis='y', color='k', linestyle='--',
-                      linewidth=0.5)
+        self.ax4.grid(which='major', axis='y', color='k', linestyle='--', linewidth=0.5)
         # OTHER OPTIONAL AXES TO PLOT
         # plot_irradiance
         # plot_precipitation
@@ -179,7 +181,7 @@ hgt_example = 292.
 
 # Parse dates from .csv file, knowing their format as a string and convert to datetime
 def parse_date(date):
-    return dt.datetime.strptime(date.decode('ascii'), '%Y-%m-%d %H:%M:%S')
+    return dt.datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
 
 
 testdata = np.genfromtxt(get_test_data('timeseries.csv', False), names=True, dtype=None,
@@ -188,7 +190,7 @@ testdata = np.genfromtxt(get_test_data('timeseries.csv', False), names=True, dty
 
 # Temporary variables for ease
 temp = testdata['T']
-pres = testdata['P']
+pressure = testdata['P']
 rh = testdata['RH']
 ws = testdata['WS']
 wsmax = testdata['WSMAX']
@@ -204,7 +206,7 @@ data = {'wind_speed': (np.array(ws) * units('m/s')).to(units('knots')),
         'dewpoint': dewpoint_from_relative_humidity((np.array(temp) * units.degC).to(units.K),
                                                     np.array(rh) / 100.).to(units('degF')),
         'air_temperature': (np.array(temp) * units('degC')).to(units('degF')),
-        'mean_slp': calc_mslp(np.array(temp), np.array(pres), hgt_example) * units('hPa'),
+        'mean_slp': calc_mslp(np.array(temp), np.array(pressure), hgt_example) * units('hPa'),
         'relative_humidity': np.array(rh), 'times': np.array(date)}
 
 fig = plt.figure(figsize=(20, 16))

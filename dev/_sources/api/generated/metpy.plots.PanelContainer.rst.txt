@@ -14,6 +14,7 @@ PanelContainer
    
       ~PanelContainer.cross_validation_lock
       ~PanelContainer.figure
+      ~PanelContainer.mpl_args
       ~PanelContainer.panel
       ~PanelContainer.panels
       ~PanelContainer.size
@@ -34,6 +35,7 @@ PanelContainer
       ~PanelContainer.class_own_traits
       ~PanelContainer.class_trait_names
       ~PanelContainer.class_traits
+      ~PanelContainer.copy
       ~PanelContainer.draw
       ~PanelContainer.has_trait
       ~PanelContainer.hold_trait_notifications
@@ -66,6 +68,7 @@ PanelContainer
    
    .. autoattribute:: cross_validation_lock
    .. autoattribute:: figure
+   .. autoattribute:: mpl_args
    .. autoattribute:: panel
    .. autoattribute:: panels
    .. autoattribute:: size
@@ -85,6 +88,7 @@ PanelContainer
    .. automethod:: class_own_traits
    .. automethod:: class_trait_names
    .. automethod:: class_traits
+   .. automethod:: copy
    .. automethod:: draw
    .. automethod:: has_trait
    .. automethod:: hold_trait_notifications

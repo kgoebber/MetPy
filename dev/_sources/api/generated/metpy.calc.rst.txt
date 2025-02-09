@@ -1,7 +1,7 @@
 ﻿
 
-calc
-==========
+Calculations ``(metpy.calc)``
+=============================
 
 .. automodule:: metpy.calc
 
@@ -25,6 +25,7 @@ Dry Thermodynamics
       static_stability
       temperature_from_potential_temperature
       thickness_hydrostatic
+      weighted_continuous_average
 
 
 Moist Thermodynamics
@@ -40,6 +41,9 @@ Moist Thermodynamics
       mixing_ratio
       mixing_ratio_from_relative_humidity
       mixing_ratio_from_specific_humidity
+      moist_air_gas_constant
+      moist_air_poisson_exponent
+      moist_air_specific_heat_pressure
       moist_lapse
       moist_static_energy
       precipitable_water
@@ -51,6 +55,7 @@ Moist Thermodynamics
       saturation_equivalent_potential_temperature
       saturation_mixing_ratio
       saturation_vapor_pressure
+      scale_height
       specific_humidity_from_dewpoint
       specific_humidity_from_mixing_ratio
       thickness_hydrostatic_from_relative_humidity
@@ -59,7 +64,12 @@ Moist Thermodynamics
       vertical_velocity_pressure
       virtual_potential_temperature
       virtual_temperature
+      virtual_temperature_from_dewpoint
+      water_latent_heat_melting
+      water_latent_heat_sublimation
+      water_latent_heat_vaporization
       wet_bulb_temperature
+      wet_bulb_potential_temperature
 
 
 Soundings
@@ -70,9 +80,15 @@ Soundings
 
       bulk_shear
       bunkers_storm_motion
+      corfidi_storm_motion
       cape_cin
+      ccl
       critical_angle
+      cross_totals
+      downdraft_cape
       el
+      galvez_davison_index
+      k_index
       lcl
       lfc
       lifted_index
@@ -84,10 +100,14 @@ Soundings
       parcel_profile
       parcel_profile_with_lcl
       parcel_profile_with_lcl_as_dataset
+      showalter_index
       significant_tornado
       storm_relative_helicity
       supercell_composite
       surface_based_cape_cin
+      sweat_index
+      total_totals_index
+      vertical_totals
 
 
 Dynamic/Kinematic
@@ -101,6 +121,7 @@ Dynamic/Kinematic
       advection
       ageostrophic_wind
       coriolis_parameter
+      curvature_vorticity
       divergence
       exner_function
       frontogenesis
@@ -111,6 +132,7 @@ Dynamic/Kinematic
       potential_vorticity_baroclinic
       potential_vorticity_barotropic
       q_vector
+      shear_vorticity
       shearing_deformation
       stretching_deformation
       total_deformation
@@ -142,6 +164,8 @@ Mathematical Functions
 
       cross_section_components
       first_derivative
+      geospatial_gradient
+      geospatial_laplacian
       gradient
       laplacian
       lat_lon_grid_deltas
@@ -149,6 +173,7 @@ Mathematical Functions
       second_derivative
       tangential_component
       unit_vectors_from_cross_section
+      vector_derivative
 
 
 Apparent Temperature
@@ -182,6 +207,7 @@ Smoothing
       smooth_rectangular
       smooth_circular
       smooth_n_point
+      zoom_xarray
 
 Other
 -----
@@ -193,6 +219,7 @@ Other
       azimuth_range_to_lat_lon
       find_bounding_indices
       find_intersections
+      find_peaks
       get_layer
       get_layer_heights
       get_perturbation
@@ -200,6 +227,7 @@ Other
       isentropic_interpolation_as_dataset
       nearest_intersection_idx
       parse_angle
+      peak_persistence
       reduce_point_density
       resample_nn_1d
 

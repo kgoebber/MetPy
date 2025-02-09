@@ -2,6 +2,7 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 """
+========================
 Station Plot with Layout
 ========================
 
@@ -14,7 +15,7 @@ existing point data in a format you can work with trivially, the station plot wi
 
 The `StationPlotLayout` class is used to standardize the plotting various parameters
 (i.e. temperature), keeping track of the location, formatting, and even the units for use in
-the station plot. This makes it easy (if using standardized names) to re-use a given layout
+the station plot. This makes it easy (if using standardized names) to reuse a given layout
 of a station plot.
 """
 import cartopy.crs as ccrs
@@ -24,8 +25,8 @@ import pandas as pd
 
 from metpy.calc import wind_components
 from metpy.cbook import get_test_data
-from metpy.plots import (add_metpy_logo, simple_layout, StationPlot,
-                         StationPlotLayout, wx_code_map)
+from metpy.plots import (add_metpy_logo, simple_layout, StationPlot, StationPlotLayout,
+                         wx_code_map)
 from metpy.units import units
 
 ###########################################
@@ -102,7 +103,7 @@ data['cloud_coverage'] = (8 * data_arr['cloud_fraction']).fillna(10).values.asty
 # Map weather strings to WMO codes, which we can use to convert to symbols
 # Only use the first symbol if there are multiple
 wx_text = data_arr['weather'].fillna('')
-data['present_weather'] = [wx_code_map[s.split()[0] if ' ' in s else s] for s in wx_text]
+data['current_wx1_symbol'] = [wx_code_map[s.split()[0] if ' ' in s else s] for s in wx_text]
 
 ###########################################
 # All the data wrangling is finished, just need to set up plotting and go:
@@ -154,7 +155,7 @@ plt.show()
 # or instead, a custom layout can be used:
 
 # Just winds, temps, and dewpoint, with colors. Dewpoint and temp will be plotted
-# out to Farenheit tenths. Extra data will be ignored
+# out to Fahrenheit tenths. Extra data will be ignored
 custom_layout = StationPlotLayout()
 custom_layout.add_barb('eastward_wind', 'northward_wind', units='knots')
 custom_layout.add_value('NW', 'air_temperature', fmt='.1f', units='degF', color='darkred')
