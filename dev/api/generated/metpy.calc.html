@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -76,12 +76,12 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="add_height_to_pressure" href="metpy.calc.add_height_to_pressure.html" />
-    <link rel="prev" title="StationLookup" href="metpy.io.StationLookup.html" />
+    <link rel="prev" title="MLWPArchive" href="metpy.remote.MLWPArchive.html" />
     
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.html" />
 
   </head>
@@ -493,6 +493,13 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.io.StationLookup.html">StationLookup</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="metpy.remote.html">Remote Data Sources <code class="docutils literal notranslate"><span class="pre">(metpy.remote)</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel3Archive.html">NEXRADLevel3Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel2Archive.html">NEXRADLevel2Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.GOESArchive.html">GOESArchive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.MLWPArchive.html">MLWPArchive</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Calculations <code class="docutils literal notranslate"><span class="pre">(metpy.calc)</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_height_to_pressure.html">add_height_to_pressure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_pressure_to_height.html">add_pressure_to_height</a></li>
@@ -863,7 +870,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.mixing_ratio.html#metpy.calc.mixing_ratio" title="metpy.calc.mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixing_ratio</span></code></a>(partial_press, total_press[, ...])</p></td>
 <td><p>Calculate the mixing ratio of a gas.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.mixing_ratio_from_relative_humidity.html#metpy.calc.mixing_ratio_from_relative_humidity" title="metpy.calc.mixing_ratio_from_relative_humidity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixing_ratio_from_relative_humidity</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.mixing_ratio_from_relative_humidity.html#metpy.calc.mixing_ratio_from_relative_humidity" title="metpy.calc.mixing_ratio_from_relative_humidity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixing_ratio_from_relative_humidity</span></code></a>(...[, phase])</p></td>
 <td><p>Calculate the mixing ratio from relative humidity, temperature, and pressure.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.mixing_ratio_from_specific_humidity.html#metpy.calc.mixing_ratio_from_specific_humidity" title="metpy.calc.mixing_ratio_from_specific_humidity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixing_ratio_from_specific_humidity</span></code></a>(...)</p></td>
@@ -893,7 +900,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.relative_humidity_from_dewpoint.html#metpy.calc.relative_humidity_from_dewpoint" title="metpy.calc.relative_humidity_from_dewpoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_humidity_from_dewpoint</span></code></a>(temperature, ...)</p></td>
 <td><p>Calculate the relative humidity.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.relative_humidity_from_mixing_ratio.html#metpy.calc.relative_humidity_from_mixing_ratio" title="metpy.calc.relative_humidity_from_mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_humidity_from_mixing_ratio</span></code></a>(...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.relative_humidity_from_mixing_ratio.html#metpy.calc.relative_humidity_from_mixing_ratio" title="metpy.calc.relative_humidity_from_mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_humidity_from_mixing_ratio</span></code></a>(...[, phase])</p></td>
 <td><p>Calculate the relative humidity from mixing ratio, temperature, and pressure.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.relative_humidity_from_specific_humidity.html#metpy.calc.relative_humidity_from_specific_humidity" title="metpy.calc.relative_humidity_from_specific_humidity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_humidity_from_specific_humidity</span></code></a>(...)</p></td>
@@ -905,11 +912,11 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.saturation_equivalent_potential_temperature.html#metpy.calc.saturation_equivalent_potential_temperature" title="metpy.calc.saturation_equivalent_potential_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_equivalent_potential_temperature</span></code></a>(...)</p></td>
 <td><p>Calculate saturation equivalent potential temperature.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.saturation_mixing_ratio.html#metpy.calc.saturation_mixing_ratio" title="metpy.calc.saturation_mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_mixing_ratio</span></code></a>(total_press, temperature)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.saturation_mixing_ratio.html#metpy.calc.saturation_mixing_ratio" title="metpy.calc.saturation_mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_mixing_ratio</span></code></a>(total_press, ...[, ...])</p></td>
 <td><p>Calculate the saturation mixing ratio of water vapor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.saturation_vapor_pressure.html#metpy.calc.saturation_vapor_pressure" title="metpy.calc.saturation_vapor_pressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_vapor_pressure</span></code></a>(temperature)</p></td>
-<td><p>Calculate the saturation water vapor (partial) pressure.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="metpy.calc.saturation_vapor_pressure.html#metpy.calc.saturation_vapor_pressure" title="metpy.calc.saturation_vapor_pressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_vapor_pressure</span></code></a>(temperature, *[, ...])</p></td>
+<td><p>Calculate the saturation (equilibrium) water vapor (partial) pressure.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="metpy.calc.scale_height.html#metpy.calc.scale_height" title="metpy.calc.scale_height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_height</span></code></a>(temperature_bottom, temperature_top)</p></td>
 <td><p>Calculate the scale height of a layer.</p></td>
@@ -1354,12 +1361,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="metpy.io.StationLookup.html"
+       href="metpy.remote.MLWPArchive.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">StationLookup</p>
+        <p class="prev-next-title">MLWPArchive</p>
       </div>
     </a>
     <a class="right-next"

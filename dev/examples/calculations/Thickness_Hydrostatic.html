@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -80,7 +80,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/examples/calculations/Thickness_Hydrostatic.html" />
 
   </head>
@@ -536,6 +536,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../plots/Station_Plot_with_Layout.html">Station Plot with Layout</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../remote/index.html">Remote Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../remote/ml_forecast.html">ML Weather Prediction Access and Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote/basic.html">Remote Data Access</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -648,7 +653,7 @@ for the layer from the surface pressure to 500-hPa</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="../../api/generated/metpy.calc.thickness_hydrostatic.html#metpy.calc.thickness_hydrostatic" title="metpy.calc.thickness_hydrostatic" class="sphx-glr-backref-module-metpy-calc sphx-glr-backref-type-py-function"><span class="n">thickness_hydrostatic</span></a><span class="p">(</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="pint.Quantity" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="p">,</span> <a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="pint.Quantity" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">T</span></a><span class="p">,</span> <span class="n">mixing_ratio</span><span class="o">=</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="pint.Quantity" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mixrat</span></a><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="pint.Quantity" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">500</span> <span class="o">*</span> <a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Unit" title="pint.Unit" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">units</span><span class="o">.</span><span class="n">hPa</span></a><span class="p">))</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>5332.443290591299 meter
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>5332.4331211279705 meter
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.011 seconds)</p>

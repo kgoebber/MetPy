@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -80,7 +80,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.io.GempakSurface.html" />
 
   </head>
@@ -492,6 +492,13 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.io.StationLookup.html">StationLookup</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="metpy.remote.html">Remote Data Sources <code class="docutils literal notranslate"><span class="pre">(metpy.remote)</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel3Archive.html">NEXRADLevel3Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel2Archive.html">NEXRADLevel2Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.GOESArchive.html">GOESArchive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.MLWPArchive.html">MLWPArchive</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="metpy.calc.html">Calculations <code class="docutils literal notranslate"><span class="pre">(metpy.calc)</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_height_to_pressure.html">add_height_to_pressure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_pressure_to_height.html">add_pressure_to_height</a></li>
@@ -865,13 +872,13 @@
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="metpy.io.GempakSurface.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2252-L2357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2240-L2345"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Instantiate GempakFile object from file.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metpy.io.GempakSurface.nearest_time">
-<span class="sig-name descname"><span class="pre">nearest_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_special</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2637-L2709"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.nearest_time" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">nearest_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_special</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2625-L2697"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.nearest_time" title="Link to this definition">#</a></dt>
 <dd><p>Get nearest observation to given time for selected stations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -895,13 +902,13 @@ are present, station_id will take precedence.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metpy.io.GempakSurface.sfinfo">
-<span class="sig-name descname"><span class="pre">sfinfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2359-L2361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.sfinfo" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">sfinfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2347-L2349"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.sfinfo" title="Link to this definition">#</a></dt>
 <dd><p>Return station information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metpy.io.GempakSurface.sfjson">
-<span class="sig-name descname"><span class="pre">sfjson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_special</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2711-L2842"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.sfjson" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">sfjson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_special</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/io/gempak.py#L2699-L2830"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.io.GempakSurface.sfjson" title="Link to this definition">#</a></dt>
 <dd><p>Select surface stations and output as list of JSON objects.</p>
 <p>Subset the data by parameter values. The default is to not
 subset and return the entire dataset.</p>

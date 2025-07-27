@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
@@ -80,7 +80,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/tutorials/unit_tutorial.html" />
 
   </head>
@@ -583,7 +583,7 @@ utilizing the computation functions in MetPy.</p>
 <p>The unit registry encapsulates all of the available units, as well as any pertinent settings.
 The registry also understands unit prefixes and suffixes; this allows the registry to
 understand <code class="docutils literal notranslate"><span class="pre">'kilometer'</span></code> and <code class="docutils literal notranslate"><span class="pre">'meters'</span></code> in addition to the base <code class="docutils literal notranslate"><span class="pre">'meter'</span></code> unit.</p>
-<p>In general, using units is only a small step on top of using the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>
+<p>In general, using units is only a small step on top of using the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>
 object.</p>
 </section>
 <section id="adding-units-to-data">
@@ -784,14 +784,14 @@ under the hood. Below we calculate dewpoint from the temperature and relative hu
 <span class="nb">print</span><span class="p">(</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="pint.Quantity" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dewpoint</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>15.726236381245258 degree_Celsius
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>15.706094895523165 degree_Celsius
 </pre></div>
 </div>
 <p>or back to Fahrenheit:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity.to" title="pint.Quantity.to" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-method"><span class="n">dewpoint</span><span class="o">.</span><span class="n">to</span></a><span class="p">(</span><span class="s1">&#39;degF&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>60.3072254862414 degree_Fahrenheit
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>60.27097081194163 degree_Fahrenheit
 </pre></div>
 </div>
 </section>
@@ -816,14 +816,14 @@ an average is by dropping the units attached to the values via <code class="docu
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity.magnitude" title="pint.Quantity.magnitude" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-property"><span class="n">dewpoint_b</span><span class="o">.</span><span class="n">magnitude</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>11.445590005179099
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>11.428407943235129
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">dewpoint_mean</span></a> <span class="o">=</span> <span class="p">(</span><a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity.magnitude" title="pint.Quantity.magnitude" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-property"><span class="n">dewpoint_a</span><span class="o">.</span><span class="n">magnitude</span></a> <span class="o">+</span> <a href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity.magnitude" title="pint.Quantity.magnitude" class="sphx-glr-backref-module-pint sphx-glr-backref-type-py-property"><span class="n">dewpoint_b</span><span class="o">.</span><span class="n">magnitude</span></a><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>
 <span class="nb">print</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">dewpoint_mean</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>13.585913193212178
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>13.567251419379147
 </pre></div>
 </div>
 </section>

@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -81,7 +81,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.mixing_ratio_from_relative_humidity.html" />
 
   </head>
@@ -493,6 +493,13 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.io.StationLookup.html">StationLookup</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="metpy.remote.html">Remote Data Sources <code class="docutils literal notranslate"><span class="pre">(metpy.remote)</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel3Archive.html">NEXRADLevel3Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel2Archive.html">NEXRADLevel2Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.GOESArchive.html">GOESArchive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.MLWPArchive.html">MLWPArchive</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="metpy.calc.html">Calculations <code class="docutils literal notranslate"><span class="pre">(metpy.calc)</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_height_to_pressure.html">add_height_to_pressure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_pressure_to_height.html">add_pressure_to_height</a></li>
@@ -795,7 +802,7 @@
 <h1>mixing_ratio_from_relative_humidity<a class="headerlink" href="#mixing-ratio-from-relative-humidity" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="metpy.calc.mixing_ratio_from_relative_humidity">
-<span class="sig-prename descclassname"><span class="pre">metpy.calc.</span></span><span class="sig-name descname"><span class="pre">mixing_ratio_from_relative_humidity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_humidity</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/calc/thermo.py#L2300-L2360"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.calc.mixing_ratio_from_relative_humidity" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">metpy.calc.</span></span><span class="sig-name descname"><span class="pre">mixing_ratio_from_relative_humidity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_humidity</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'liquid'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/calc/thermo.py#L2436-L2503"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.calc.mixing_ratio_from_relative_humidity" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the mixing ratio from relative humidity, temperature, and pressure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -804,6 +811,9 @@
 <li><p><strong>temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/api/base.html#pint.Quantity" title="(in pint v0.24.4)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Air temperature</p></li>
 <li><p><strong>relative_humidity</strong> (<em>array-like</em>) – The relative humidity expressed as a unitless ratio in the range [0, 1]. Can also pass
 a percentage if proper units are attached.</p></li>
+<li><p><strong>phase</strong> (<em>{'liquid'</em><em>, </em><em>'solid'</em><em>, </em><em>'auto'}</em>) – Where applicable, adjust assumptions and constants to make calculation valid in
+<code class="docutils literal notranslate"><span class="pre">'liquid'</span></code> water (default) or <code class="docutils literal notranslate"><span class="pre">'solid'</span></code> ice regimes. <code class="docutils literal notranslate"><span class="pre">'auto'</span></code> will change regime
+based on determination of phase boundaries, eg <em class="xref py py-obj">temperature</em> relative to freezing.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -817,7 +827,7 @@ a percentage if proper units are attached.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="mf">28.1</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">degC</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rh</span> <span class="o">=</span> <span class="mf">.65</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mixing_ratio_from_relative_humidity</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rh</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;g/kg&#39;</span><span class="p">)</span>
-<span class="go">&lt;Quantity(15.7646969, &#39;gram / kilogram&#39;)&gt;</span>
+<span class="go">&lt;Quantity(15.7296568, &#39;gram / kilogram&#39;)&gt;</span>
 </pre></div>
 </div>
 <div class="admonition seealso">

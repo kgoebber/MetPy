@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -80,7 +80,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.parcel_profile_with_lcl.html" />
 
   </head>
@@ -492,6 +492,13 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.io.StationLookup.html">StationLookup</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="metpy.remote.html">Remote Data Sources <code class="docutils literal notranslate"><span class="pre">(metpy.remote)</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel3Archive.html">NEXRADLevel3Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.NEXRADLevel2Archive.html">NEXRADLevel2Archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.GOESArchive.html">GOESArchive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.remote.MLWPArchive.html">MLWPArchive</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="metpy.calc.html">Calculations <code class="docutils literal notranslate"><span class="pre">(metpy.calc)</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_height_to_pressure.html">add_height_to_pressure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.add_pressure_to_height.html">add_pressure_to_height</a></li>
@@ -794,7 +801,7 @@
 <h1>parcel_profile_with_lcl<a class="headerlink" href="#parcel-profile-with-lcl" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="metpy.calc.parcel_profile_with_lcl">
-<span class="sig-prename descclassname"><span class="pre">metpy.calc.</span></span><span class="sig-name descname"><span class="pre">parcel_profile_with_lcl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dewpoint</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/calc/thermo.py#L1247-L1335"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.calc.parcel_profile_with_lcl" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">metpy.calc.</span></span><span class="sig-name descname"><span class="pre">parcel_profile_with_lcl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dewpoint</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Unidata/MetPy/blob/main/src/metpy/calc/thermo.py#L1255-L1343"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metpy.calc.parcel_profile_with_lcl" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the profile a parcel takes through the atmosphere.</p>
 <p>The parcel starts at <em class="xref py py-obj">temperature</em>, and <a class="reference internal" href="metpy.calc.dewpoint.html#metpy.calc.dewpoint" title="metpy.calc.dewpoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dewpoint</span></code></a>, lifted up
 dry adiabatically to the LCL, and then moist adiabatically from there.
@@ -854,7 +861,7 @@ including the LCL</p></li>
 <p>Only functions on 1D profiles (not higher-dimension vertical cross sections or grids).
 Duplicate pressure levels return duplicate parcel temperatures. Consider preprocessing
 low-precision, high frequency profiles with tools like <em class="xref py py-obj">scipy.medfilt</em>,
-<em class="xref py py-obj">pandas.drop_duplicates</em>, or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique" title="(in NumPy v2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.unique</span></code></a>.</p>
+<em class="xref py py-obj">pandas.drop_duplicates</em>, or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique" title="(in NumPy v2.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.unique</span></code></a>.</p>
 <p>Will only return Pint Quantities, even when given xarray DataArray profiles. To
 obtain a xarray Dataset instead, use <a class="reference internal" href="metpy.calc.parcel_profile_with_lcl_as_dataset.html#metpy.calc.parcel_profile_with_lcl_as_dataset" title="metpy.calc.parcel_profile_with_lcl_as_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parcel_profile_with_lcl_as_dataset</span></code></a> instead.</p>
 <div class="versionchanged">

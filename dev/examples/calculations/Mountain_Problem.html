@@ -45,7 +45,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=fd3ac1f4"></script>
+    <script src="../../_static/documentation_options.js?v=4da70f68"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -80,7 +80,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0dev" />
-    <meta name="docbuild:last-update" content="Feb 09, 2025 at 17:30:45"/>
+    <meta name="docbuild:last-update" content="Jul 27, 2025 at 18:33:15"/>
     <link rel="canonical" href="https://unidata.github.io/MetPy/latest/examples/calculations/Mountain_Problem.html" />
 
   </head>
@@ -536,6 +536,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../plots/Station_Plot_with_Layout.html">Station Plot with Layout</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../remote/index.html">Remote Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../remote/ml_forecast.html">ML Weather Prediction Access and Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote/basic.html">Remote Data Access</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -634,8 +639,8 @@ function and retain the pressure level and temperature of the parcel at the LCL<
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Initial dry ascent yields:
-  LCL Pressure: 801.54 hectopascal
-  LCL Temperature: 6.74 degree_Celsius
+  LCL Pressure: 801.14 hectopascal
+  LCL Temperature: 6.73 degree_Celsius
 </pre></div>
 </div>
 <p>Knowing that the calculation of the dry ascent is accomplished by the LCL calculation, we
@@ -650,7 +655,7 @@ at the top of our ascent (700-hPa in our case)</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>After moist ascent:
-  Temperature at top of ascent: 0.82 degree_Celsius
+  Temperature at top of ascent: 0.81 degree_Celsius
 </pre></div>
 </div>
 <p>Now to come “down the mountain” our parcel will warm dry adiabatically, so we can use the
@@ -669,14 +674,14 @@ and convert our solution to Celsius</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Starting Temperature: 25.00 degree_Celsius
 Starting Dewpoint: 10.00 degree_Celsius
 
-Final Temperature: 30.21 degree_Celsius
-Final Dewpoint: 0.82 degree_Celsius
+Final Temperature: 30.20 degree_Celsius
+Final Dewpoint: 0.81 degree_Celsius
 </pre></div>
 </div>
 <p>So as we expect the parcel has warmed and dried out through the combined dry and moist ascent
 due to the release of latent heat and subsequent precipitating out of moisture from the
 parcel</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.006 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.007 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-calculations-mountain-problem-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6bc61c84bcb5f6be53fe66708fe85106/Mountain_Problem.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Mountain_Problem.ipynb</span></code></a></p>
